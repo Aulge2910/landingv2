@@ -1,79 +1,72 @@
 // app/components/Hero.tsx
 "use client";
-import Image from "next/image";
-import avatar from "@images/b1.jpg";
-import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { IoLocation } from "react-icons/io5";
-import { RiSpeakFill } from "react-icons/ri";
-import { AiFillGithub } from "react-icons/ai";
-import { MdEmail } from "react-icons/md";
-import { IoMdContact } from "react-icons/io";
-import { FaReact } from "react-icons/fa";
-import { SiGsap } from "react-icons/si";
-import { MdOutlineDevices } from "react-icons/md";
-import { Navbar } from "@/app/_components/NavBar";
+import { Card, Container } from "@/app/_components/PortfolioShowcase";
+
+const SkillData = [
+  {
+    id: "1",
+    title: "Technical Stack",
+    items: [
+      {
+        label: "Frontend",
+        value:
+          "React, Next.js, TypeScript, Javascript, Tailwind CSS, Bootstrap 5, SCSS, jQuery, Axios",
+      },
+      { label: "Backend & CMS", value: "Node.js, PHP, Laravel, WordPress" },
+      {
+        label: "Interactive & Motion",
+        value: "GSAP (GreenSock), 2D, 3D (todo)",
+      },
+    ],
+  },
+  {
+    id: "2",
+    title: "Database & Infrastructure",
+    items: [
+      { label: "Databases", value: "MySQL, pgAdmin (PostgreSQL)" },
+      {
+        label: "Environment",
+        value: "XAMPP, Webpack, Node Package Manager (NPM)",
+      },
+    ],
+  },
+  {
+    id: "3",
+    title: "Development Workflow",
+    items: [
+      { label: "API Testing", value: "Apifox, Postman" },
+      { label: "Version Control", value: "Git, GitHub" },
+      {
+        label: "Collaboration",
+        value: "Lark (Feishu), Microsoft Office Suite",
+      },
+    ],
+  },
+];
+
 const Skills = () => {
   return (
-    <section className="h-screen w-full flex items-center justify-center">
-      <div className="w-full grid grid-cols-12">
-        <Navbar />
-        <div className="col-span-9 bg-amber-500 p-20 flex flex-col items-start justify-start w-full">
-          <span className="text-2xl xl:text-8xl font-bold">Skills </span>
-          <div className="h-8" />
-          <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 w-full">
-            <div className="min-w-full snap-center bg-white/5 p-6 rounded-2xl border border-white/10">
-              <span className="font-bold">Technical Stack</span>
-
-              <ul className="list-disc pl-6">
-                <li>
-                  <strong>Frontend</strong>: React, Next.js, TypeScript,
-                  Javascript, Tailwind CSS, Bootstrap 5, SCSS, jQuery, Axios.
-                </li>
-                <li>
-                  <strong>Backend & CMS</strong>: Node.js, PHP, Laravel,
-                  WordPress.
-                </li>
-                <li>
-                  <strong>Interactive & Motion</strong>: GSAP (GreenSock), 2D,
-                  3D (todo).
-                </li>
-              </ul>
-            </div>
-            <div className="min-w-full snap-center bg-white/5 p-6 rounded-2xl border border-white/10">
-              <span className="font-bold">Database & Infrastructure</span>
-
-              <ul className="list-disc pl-6">
-                <li>
-                  <strong>Databases</strong>: MySQL, pgAdmin (PostgreSQL).
-                </li>
-                <li>
-                  <strong>Environment</strong>: XAMPP, Webpack, Node Package
-                  Manager (NPM).
-                </li>
-              </ul>
-            </div>
-            <div className="min-w-full snap-center bg-white/5 p-6 rounded-2xl border border-white/10">
-              <span className="font-bold">Development Workflow</span>
-
-              <ul className="list-disc pl-6">
-                <li>
-                  <strong>API Testing</strong>: Apifox, Postman.
-                </li>
-                <li>
-                  <strong>Version Control</strong>: Git, GitHub.
-                </li>
-                <li>
-                  <strong>Collaboration</strong>: Lark (Feishu), Microsoft
-                  Office Suite
-                </li>
-              </ul>
-            </div>
-          </div>{" "}
-        </div>{" "}
-      </div>
-    </section>
+    
+      <Container>
+        <Card title="Skills">
+          <div className="flex flex-col">
+            {SkillData.map((skill, _index) => (
+              <div key={skill.id} className="skill-card w-full shrink-0 p-6">
+                <span className="font-bold text-2xl">{skill.title}</span>
+                <ul className="list-disc pl-6 flex gap-4 flex-col">
+                  <div className="h-2" />
+                  {skill.items.map((item, index) => (
+                    <li className="" key={index}>
+                      <strong>{item.label}</strong>: {item.value}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Card>
+      </Container>
+     
   );
 };
 export default Skills;
