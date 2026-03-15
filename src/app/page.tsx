@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="w-full">
       <main className="w-full">
-        <Hero /> <Intro />
+        <Hero />
         <HorizontalSections />
         <Skills />
       </main>

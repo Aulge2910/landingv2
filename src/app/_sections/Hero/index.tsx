@@ -3,15 +3,15 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
+  useGSAP(() => {
     gsap.set(introRef.current, {
       y: 50,
       opacity: 0,
@@ -23,7 +23,7 @@ const Hero = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=200%", // for 2 more screen height, for the animation to have enough time to run smoothly
+        end: "bottom bottom",
         scrub: 1,
         pin: true,
         pinSpacing: false,
@@ -47,33 +47,35 @@ const Hero = () => {
       },
       "-=0.3",
     );
-
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
   }, []);
 
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full flex items-center justify-center bg-black overflow-hidden"
+      className="relative w-full h-[300vh] bg-black overflow-hidden"
     >
-      <h1
-        ref={textRef}
-        className="text-[10vw] font-black text-white select-none"
-      >
-        WHO AM I
-      </h1>
+      {/* front ground */}
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center">
+        {/* HELLO layer */}
+        <div className="text-center z-10" ref={textRef}>
+          <h2 className="text-[10vw] font-black text-white select-none">
+            HELLO
+          </h2>
+        </div>
 
-      <div
-        ref={introRef}
-        className="absolute inset-0 -z-10 flex flex-col items-center justify-center"
-      >
-        <h2 className="text-4xl text-white ">Hi, I'm Amy Tiong</h2>
-        <p className="text-white/30">Scroll to dive into my work</p>
+        {/* background intro */}
+        <div
+          ref={introRef}
+          className="absolute inset-0 flex flex-col items-center justify-center z-0"
+        >
+          <h2 className="text-8xl font-thin text-white ">I'm Amy Tiong</h2>
+          <p className="text-white/30 text-2xl">A Junior Web Developer</p>
+        </div>
       </div>
+
+      <div className="h-screen" />
+      <div className="h-screen" />
     </section>
   );
 };
-
 export default Hero;

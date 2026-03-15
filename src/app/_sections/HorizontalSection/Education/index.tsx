@@ -1,13 +1,10 @@
-// app/components/Hero.tsx
 "use client";
 
 import {  Card, Container } from "@/app/_components/PortfolioShowcase";
 
 const Education = () => {
-  return (
-     
+  return ( 
       <Container>
-       
         <Card title="Education">
           <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 w-full">
             <div className="min-w-full snap-center bg-white/5 p-6 rounded-2xl border border-white/10">
@@ -40,7 +37,7 @@ const Education = () => {
                 </div>
               </div>
             </div>
-          </div>{" "}
+          </div>
         </Card>
       </Container>
  

@@ -3,9 +3,9 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import About from "@/app/_sections/About";
+import About from "@/app/_sections/HorizontalSection/About";
 import Skills from "@/app/_sections/Skills";
-import Education from "@/app/_sections/Education";
+import Education from "@/app/_sections/HorizontalSection/Education";
 import Experience from "@/app/_sections/Experience";
 
 gsap.registerPlugin(ScrollTrigger);

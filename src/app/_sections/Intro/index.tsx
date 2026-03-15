@@ -13,14 +13,15 @@ const Intro = () => {
     if (!contentRef.current) return;
 
     gsap.from(contentRef.current, {
-      y: 300, 
+      y: 200, 
       opacity: 0,
       scale: 0.8, 
+      duration:2,
       scrollTrigger: {
         trigger: sectionRef.current,
         markers: true, 
         start: "top 70%", 
-        end: "top 30%",
+        end: "top 20%",
         scrub: 2, 
       },
     });
@@ -29,7 +30,7 @@ const Intro = () => {
   return (
     <section
       ref={sectionRef}
-      className="mt-[160vh] relative z-20 h-screen w-full flex items-center justify-center bg-amber-400 overflow-hidden"
+      className="mt-[160vh] relative z-20 h-screen w-full flex items-center justify-center bg-black text-white overflow-hidden"
     >
       <div
         ref={contentRef}
