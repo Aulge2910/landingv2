@@ -15,9 +15,9 @@ const About = () => {
           </span>
           <div className="h-4" />
           <p className=" leading-relaxed tracking-tight">
-            I am passionate about
+            I am passionate about  {" "}
             <strong className="font-bold">
-              building creative & interactive frontend
+               building creative & interactive frontend
             </strong>
             experiences using GSAP. I focus on capturing user attention through
             smooth performance and engaging motion. My ultimate goal is to
@@ -37,7 +37,7 @@ const About = () => {
           <div className="w-full grid grid-cols-12 gap-2">
             <div className="w-full col-span-12 lg:col-span-7 grid grid-cols-2 text-center ">
               <div className="flex flex-col justify-center items-center p-8  bg-black  border-r border-b border-white border-dotted">
-                <span className="xl:text-4xl text-2xl font-black text-amber-500 ">
+                <span className="xl:text-4xl text-2xl font-black text-white ">
                   1+
                 </span>
                 <span className="uppercase text-xs text-white my-1">
@@ -45,7 +45,7 @@ const About = () => {
                 </span>
               </div>
               <div className="flex flex-col justify-center items-center p-8 bg-black border-l border-b border-white border-dotted">
-                <span className="xl:text-4xl text-2xl font-black text-amber-500">
+                <span className="xl:text-4xl text-2xl font-black text-white">
                   Self
                 </span>
                 <span className="uppercase text-xs text-white my-1">
@@ -53,7 +53,7 @@ const About = () => {
                 </span>
               </div>
               <div className="flex flex-col justify-center items-center p-8 bg-black border-r border-white border-dotted ">
-                <span className="xl:text-4xl text-2xl font-black text-amber-500">
+                <span className="xl:text-4xl text-2xl font-black text-white">
                   2D/3D Explorer
                 </span>
                 <span className="uppercase text-xs text-white my-1">
@@ -61,7 +61,7 @@ const About = () => {
                 </span>
               </div>
               <div className="flex flex-col justify-center items-center p-8 bg-black border-l border-b border-white border-dotted">
-                <span className="xl:text-4xl text-2xl font-black text-amber-500 ">
+                <span className="xl:text-4xl text-2xl font-black text-white ">
                   Clean Architect
                 </span>
                 <span className="uppercase text-xs text-white my-1">

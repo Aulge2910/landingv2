@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "@/app/_sections/HorizontalSection/About";
 import Skills from "@/app/_sections/Skills";
 import Education from "@/app/_sections/HorizontalSection/Education";
-import Experience from "@/app/_sections/Experience";
+import Experience from "@/app/_sections/HorizontalSection/Experience";
 
 gsap.registerPlugin(ScrollTrigger);
 

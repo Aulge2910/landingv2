@@ -1,6 +1,6 @@
 // app/components/Hero.tsx
 "use client";
-import { Card, Container } from "../../_components/PortfolioShowcase";
+import { Card, Container } from "@/app/_components/PortfolioShowcase";
 
 const ExperienceData = [
   {
